@@ -1,0 +1,69 @@
+
+  <div class="container">
+    <div class="row">
+      <div class="center col s4 push-s4">
+        <h5 class="col s12 red-text"><%= @user.username %></h5>
+        <h3 class="col s12 red-text"><%= @user.first_name %> <%= @user.last_name %></h3>
+        <h6 class="col s12 red-text">WINS: <%= @user.wins %>  |  LOSSES: <%= @user.losses %>  |  K/D: <%= @user.kd_ratio %></h6>
+        <h4 class="col s12">MOTO</h4>
+        <p class="col s12"><%= @user.motto %></p>
+        <a class="col l4 offset-l1 waves-effect waves-light btn-large green"><%= button_to "MAKE A BET", new_challenge_path, method: :get %></a>
+        <a class="col l4 offset-l2 waves-effect waves-light btn-large red"><%= button_to "ADD A FRIEND", new_challenge_path, method: :get %></a><br>
+        <p class="center col s12">(to bet one must be a friend)</p>
+      </div>
+
+      <div class="col s4 push-s6">
+          <div class="friends_list_div">
+            <ul class="collection">
+            <% @users.each do |user| %>
+                <li class="collection-item avatar">
+                <a href="#" class="circle"><%=image_tag("straightupLogoSiteHome.png")%></a>
+                <span class="title"><%= user.username %></span>
+                <p><%= user.first_name + " " + user.last_name %><br>
+                    WINS: <%= user.wins %> | Losses: <%= user.losses %> | K/D: <%= user.kd_ratio %><br>
+                </p>
+                <a href="#!" value="nothing" class="secondary-content"><i class="material-icons">grade</i></a>
+            <% end %>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dropdown Trigger -->
+  <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+  </ul>
+        
+
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">NEWS</h5>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="#">Rob</a>
+      </div>
+
+    </div>
+</footer>
+

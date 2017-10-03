@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  event: MyString
+  rules: MyText
+  bet_amount: 1
+  challenge_accepted?: false
+  challenge_complete?: false
+  user_id: 
+  moderator_id: 
+  gameroom_id: 
+
+two:
+  title: MyString
+  event: MyString
+  rules: MyText
+  bet_amount: 1
+  challenge_accepted?: false
+  challenge_complete?: false
+  user_id: 
+  moderator_id: 
+  gameroom_id: 

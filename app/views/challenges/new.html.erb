@@ -1,0 +1,46 @@
+
+<div class="container"> 
+    <div class="row">
+        <br><br>
+        <div class="center col s4 push-s4">
+            <H5 class="light">PICK OPPONENT OR ADD INVITE SOMEONE NEW</H5>
+            <form action="/challenges" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <div class="input-field col s12">
+                    <input type="text" id="User2_id" name = "challenge[user2_id]">
+                    <label for="Title">PICK SOMEONE TO BET</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="Title" name = "challenge[title]">
+                    <label for="Title">NAME BET (ex. hockey bet with Timmmy)</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="Event" name = "challenge[event]">
+                    <label for="Event">EVENT (ex. who can jump higher)</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="Rules" name = "challenge[rules]">
+                    <label for="Rules">OUTLINE THE RULES</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="Bet_Amount" name = "challenge[bet_amount]">
+                    <label for="Bet_Amount">HOW MUCH DO YOU WANT TO BET?</label>
+                </div>
+                <a class="waves-effect waves-light btn-large green"><input type="submit" name="login" value="SEND BET"></a>
+            </form>      
+        </div>
+        <div class=" col s3 push-s7">
+            <ul class="collection">
+            <% @users.each do |user| %>
+                <li class="collection-item avatar">
+                <img src="images/yuna.jpg" alt="" class="circle">
+                <span class="title">Username</span>
+                <p><%= user.first_name + " " + user.last_name %><br>
+                    WINS: 10 | Losses: 5 | K/D: 2<br>
+                </p>
+                <a href="#!" value="nothing" class="secondary-content"><i class="material-icons">grade</i></a>
+            <% end %>
+            </ul>
+        </div>
+    </div>
+</div>

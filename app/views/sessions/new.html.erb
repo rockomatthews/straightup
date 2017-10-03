@@ -1,0 +1,68 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo center"><%=image_tag("straightupLogoSiteHome.png")%></a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <br><br>
+    <div class="row">
+        <h3 class="center light">SIMPLE P2P BETTING</h3>
+        <br><br><br>
+        <div class="col s5 push-s7">
+            <H5 class="light">OR PLEASE... JOIN US</H5>
+            <form action="/users" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <div class="input-field col s12">
+                    <input type="text" id="Username" name = "user[username]">
+                    <label for="Username">USERNAME</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="Email" name = "user[email]">
+                    <label for="Email">EMAIL</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="Motto" name = "user[motto]">
+                    <label for="Motto">YOUR MOTTO (OPTIONAL)</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" id="First_Name" name = "user[first_name]">
+                    <label for="First_Name">FIRST NAME</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" id="Last_Name" name = "user[last_name]">
+                    <label for="Last_Name">HOUSE NAME</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="password" id="Password" name = "user[password]">
+                    <label for="Password">PASSWORD</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="password" id="Password_Confirmation" name = "user[password_confirmation]">
+                    <label for="Password_Confirmation">AND AGAIN!</label>
+                </div>
+                <a class="waves-effect waves-light btn"><input type="submit" name="Join" value="JOIN US"></a>
+            </form>
+        </div>
+        <div class="col s4 pull-s4">
+            <H5 class="light">LOG BACK IN. sorry...</H5>
+            <form action="/sessions" method="post">
+                <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+                <div class="input-field col s12">
+                    <input type="text" id="Email" name = "user[email]">
+                    <label for="Email">EMAIL</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="password" id="Password" name = "user[password]">
+                    <label for="Password">PASSWORD</label>
+                </div>
+                <a class="waves-effect waves-light btn"><input type="submit" name="login" value="Login"></a>
+            </form>
+        </div>
+    </div>
+</div>

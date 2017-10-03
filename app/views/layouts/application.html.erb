@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+  
+
+
+  <div>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |e| %>
+        <%= e %>
+      <% end %>
+    <% end %>
+    <% if current_user %>
+      
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center"><%=image_tag("straightupLogoSiteHome.png")%></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="#"><%= current_user.first_name %></a></li>
+        <li><a href="#">Balance: <%= current_user.wallet.money %></a></li>
+      </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class="waves-effect waves-light btn-large"><%= button_to "LOGOUT", logout_path, method: :get %></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#" class="brand-logo center"><%= image_tag("straightupLogoSiteHome.png")%></a></li>
+        <li><a href="#"><%= current_user.first_name %></a></li>
+        <li><a href="#">Balance: <%= current_user.wallet.money %></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <% end %> 
+
+
+
+
+
+    <%= yield %>
+  </div>
+
+  </body>
+</html>
